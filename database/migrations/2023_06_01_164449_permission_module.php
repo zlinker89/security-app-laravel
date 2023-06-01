@@ -15,7 +15,8 @@ return new class extends Migration
             $table->enum('type_permission', ['inherited', 'only'])->default('inherited');
             $table->string('tenant_id');
             $table->foreignId('module_id')->references('id')->on('modules');
-            $table->foreignId('app_id')->references('id')->on('apps');$table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('app_id')->references('id')->on('apps');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
